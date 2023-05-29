@@ -1,5 +1,5 @@
 #first-heading {
-    color: red;
+    color: var(--text-color);
     font-size: 50px;
 }
 .second-heading{
@@ -13,8 +13,16 @@ a {
 :root{
     --text-color: green;
 }
+
 .box{
     width: 50%;
     height: 100px;
-    background-color: red;
+    background-color: rgb(95, 11, 11);
+}
+
+h1::first-line{
+color: aqua;
+}
+::selection{
+    color: blueviolet;
 }
