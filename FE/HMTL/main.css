@@ -15,9 +15,31 @@ a {
 }
 
 .box{
-    width: 50%;
-    height: 100px;
-    background-color: rgb(95, 11, 11);
+    width: 60px;
+    height: 60px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box1{
+    background-color: black;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.box2{
+    background-color: orange;
+}
+.box3{
+    background-color: red;
+    padding: 10px;
+    border: 10px solid #333;
+    margin-top: 20px;
+    box-sizing: border-box;
+    background-image: url(https://fullstack.edu.vn/assets/images/f8_avatar.png
+    );
+    background-size: 100%;
+    background-origin: padding-box;
 }
 
 h1::first-line{
