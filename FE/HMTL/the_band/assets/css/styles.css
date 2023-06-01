@@ -16,6 +16,11 @@ html{
 #header{
     height: 46.5px;
     background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
 }
  
 #nav{
@@ -79,23 +84,47 @@ html{
     float:right;
     line-height: 46.5px;
     padding: 0  21px;
+    cursor: pointer;
 }
 #header .search-btn:hover{
     color: #fff;
     background-color: #f44336;
-    cursor: pointer;
 }
 #header .search-icon{
     color: #fff;
-    font-size: 20px;
+    font-size: 16px;
 }
+
 #slider{
-    min-height: 500px;
-    background-color: #333;
+    padding-top: 50%;
+    margin-top: 46.5px;
+    background: url('/FE/HMTL/the_band/assets/img/chicago.jpg') top center / cover no-repeat;
+    position: relative;
+}
+
+#slider .text-content{
+    position: absolute;
+    color: #fff;
+    bottom: 42px;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    text-align: center;
+    width: 100%;
+}
+
+#slider .text-heading{
+    font-weight: 500;
+    font-size: 24px;
+}
+
+#slider .text-description{
+    font-size: 15px;
+    margin-top: 25px;
 }
 
 #content{
-
+    height: 1000px;
+    background-color: #ccc;
 }
 
 #footer{
