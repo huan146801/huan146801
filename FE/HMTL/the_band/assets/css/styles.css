@@ -38,15 +38,16 @@ html{
     line-height: 46.5px;
     text-decoration: none;
     padding: 0 24px 0;
-    display: inline-block
+    display: block;
 }
 
 #nav .subnav{
-    display: none;
+    /* display: none; */
 }
 
 #slider{
-
+    min-height: 500px;
+    background-color: #333;
 }
 
 #content{
