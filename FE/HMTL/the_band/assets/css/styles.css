@@ -17,9 +17,13 @@ html{
     height: 46.5px;
     background-color: black;
 }
-
+ 
+#nav{
+    display: inline-block;
+}
 #nav, .subnav{
     list-style-type: none;
+
 }
 
 #nav > li{
@@ -67,6 +71,24 @@ html{
     line-height: 38.5px;
 }
 
+#nav .nav-arrow{
+    font-size: 10px;
+}
+
+#header .search-btn{
+    float:right;
+    line-height: 46.5px;
+    padding: 0  21px;
+}
+#header .search-btn:hover{
+    color: #fff;
+    background-color: #f44336;
+    cursor: pointer;
+}
+#header .search-icon{
+    color: #fff;
+    font-size: 20px;
+}
 #slider{
     min-height: 500px;
     background-color: #333;
