@@ -1,3 +1,5 @@
+/* COMMON */
+
 *{
     padding: 0;
     margin: 0;
@@ -16,6 +18,7 @@ html{
     color: #fff !important;
 }
 
+/* Main */
 #main{
 
 }
@@ -285,13 +288,99 @@ html{
     left: 0;
     bottom: 0;
     background: rgba(0,0,0,0.4);
-    display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
+}
+
+.modal.open{
+    display: flex;
 }
 
 .modal-container {
     background: #fff;
     width: 900px;
     min-height: 200px;
+    position: relative;
+    max-width: calc(100% - 32px);
+    animation: modalFadein ease 0.5s;
+}
+
+header.modal-header{
+    background-color: #009688 ;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: #fff;
+}
+
+.modal-header i{
+    margin-right: 16px;
+}
+
+.modal-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.modal-close:hover{
+    background-color: #ccc;
+}
+
+.modal-body{
+    padding: 16px;
+}
+
+.modal-label{
+    display: block;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.modal-input{
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+    margin-bottom: 24px;
+}
+
+.buy-tickets {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    width: 100%;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 16px;
+}
+
+.buy-tickets:hover{
+    opacity: 0.8;
+}
+
+.modal-footer{
+    padding: 16px;
+    text-align: right;
+}
+
+.modal footer a{
+    color: aqua;
+}
+
+@keyframes modalFadein {
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
