@@ -8,7 +8,7 @@
 
 html{
     font-family: Arial, Helvetica, sans-serif;
-
+    scroll-behavior: smooth;
 }
 .clear{
     clear: both;
@@ -18,6 +18,50 @@ html{
     color: #fff !important;
 }
 
+.mt-8{
+    margin-top: 8px !important;
+}
+
+.mt-16{
+    margin-top: 16px !important;
+}
+
+.pull-right{
+    float: right;
+}
+
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+
+.row::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.col{
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.col-3{
+    width: 33.33333%;
+}
+
+.col-2{
+    width: 50%;
+}
+
+.col-1{
+    width: 100%;
+}
+
+.text-center{
+    text-align: center !important;
+}
 /* Main */
 #main{
 
@@ -167,11 +211,7 @@ html{
 #content .member-list{
     margin-top: 45px;
 }
-#content .member-item{
-    float: left;
-    width: calc(100%/3);
-    text-align: center;
-}
+
 #content .member-name{
     font-size: 15px;
 }
@@ -219,15 +259,6 @@ html{
 
 .place-list{
     margin-top: 32px;
-    margin-left: -8px;
-    margin-right: -8px;
-    padding-bottom: 48px;
-}
-
-.place-item{
-    float: left;
-    width: 33.33333%;
-    padding: 0 8px;
 }
 
 .place-img{
@@ -260,7 +291,7 @@ html{
     line-height: 1.4;
 }
 
-.place-buy-btn{
+.btn{
     width: 108px;
     height: 38px;
     text-decoration: none;
@@ -270,9 +301,11 @@ html{
     line-height: 38px;
     text-align: center;
     margin-top: 16px;
+    border: none;
+    cursor: pointer;
 }
 
-.place-buy-btn:hover{
+.btn:hover{
     background-color: #ccc;
     color: #000;
 }
@@ -383,4 +416,61 @@ header.modal-header{
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+.contact-content{
+    margin-top: 48px;
+}
+
+.contact-info{
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.contact-info i[class*="ti-"] {
+    width: 30px;
+    display: inline-block;
+}
+
+.contact-form{
+    font-size: 15px;
+}
+
+.form-control{
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.map-section img{
+    width: 100%;
+}
+
+#footer{
+    padding: 64px 16px;
+    text-align: center;
+}
+
+#footer .social-list{
+    font-size: 24px;
+}
+
+#footer .social-list a{
+    color: rgba(0,0,0,0.6);
+    text-decoration: none;
+}
+
+#footer .copyright a:hover,
+#footer .social-list a:hover{
+    color: rgba(0,0,0,0.4);
+}
+
+#footer .copyright{
+    margin-top: 15px;
+    color: rgba(0,0,0,0.6);
+    font-size: 15px;
+}
+
+#footer .copyright a{
+    color: rgba(0,0,0,0.6) ;
 }
