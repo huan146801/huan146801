@@ -26,6 +26,9 @@ html{
     margin-top: 16px !important;
 }
 
+.mt-32{
+    margin-top: 32px !important;
+}
 .pull-right{
     float: right;
 }
@@ -75,7 +78,6 @@ html{
     left: 0;
     right: 0;
     z-index: 1;
-    overflow: hidden;
 }
  
 #nav{
@@ -134,6 +136,14 @@ html{
 #nav .nav-arrow{
     font-size: 10px;
 }
+
+#header .mobile-menu-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+}
+
 
 #header .mobile-menu-btn,
 #header .search-btn{
@@ -225,7 +235,7 @@ html{
     line-height: 1.6;
 }
 #content .member-list{
-    margin-top: 45px;
+    margin-top: 29px;
 }
 
 #content .member-name{
@@ -274,7 +284,7 @@ html{
 }
 
 .place-list{
-    margin-top: 32px;
+    margin-top: 16px;
 }
 
 .place-img{
