@@ -48,3 +48,27 @@ color: aqua;
 ::selection{
     color: blueviolet;
 }
+
+
+.pc,.tablet,.mobile{
+    display: none;
+    font-size: 68px;
+}
+
+@media (min-width: 1024px){
+    .pc{
+        display: block;
+    }
+}
+
+@media (min-width: 740px) and (max-width: 1023px){
+    .tablet{
+        display: block;
+    }
+}
+
+@media (max-width: 739px){
+    .mobile{
+        display: block;
+    }
+}

@@ -68,13 +68,14 @@ html{
 }
 
 #header{
-    height: 46.5px;
+    height: 47px;
     background-color: black;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1;
+    overflow: hidden;
 }
  
 #nav{
@@ -108,7 +109,7 @@ html{
     text-transform: uppercase;
 }
 #nav li a{
-    line-height: 46.5px;
+    line-height: 47px;
     text-decoration: none;
     padding: 0 24px 0;
     display: block;
@@ -134,16 +135,28 @@ html{
     font-size: 10px;
 }
 
+#header .mobile-menu-btn,
 #header .search-btn{
     float:right;
-    line-height: 46.5px;
+    line-height: 47px;
     padding: 0  21px;
     cursor: pointer;
 }
+
+#header .mobile-menu-btn:hover{
+    background-color: #ccc;
+}
+
+#header .mobile-menu-btn:hover .menu-icon{
+    color: #000;
+}
+
 #header .search-btn:hover{
     color: #fff;
     background-color: #f44336;
 }
+
+#header .menu-icon,
 #header .search-icon{
     color: #fff;
     font-size: 16px;
@@ -178,13 +191,16 @@ html{
 
 #content{
     height: 1000px;
-    background-color: #ccc;
+    background-color: #fff;
 }
 #content .content-section{
     width: 800px;
+    max-width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 64px 0;
+    padding: 64px 0 112px;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .section-heading{
@@ -474,3 +490,4 @@ header.modal-header{
 #footer .copyright a{
     color: rgba(0,0,0,0.6) ;
 }
+ 
