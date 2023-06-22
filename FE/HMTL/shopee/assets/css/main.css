@@ -324,9 +324,6 @@
     padding-top: 4px;
 }
 
-.header__notify-footer{
-}
-
 .header__notify-footer-btn{
     text-decoration: none;
     color: var(--text-color);
@@ -368,9 +365,6 @@
     font-weight: 500;
     color: var(--primary-color);
     cursor: pointer;
-}
-
-.auth-form__form{
 }
 
 .auth-form__input{
@@ -417,7 +411,6 @@
 
 .auth-form__social-icon{
     font-size: 1.8rem;
-    color: ;
 }
 
 .auth-form__social-icon.auth-form__social--facebook{
