@@ -270,32 +270,79 @@
                     <div class="grid__column-10">
                         <div class="home-filter">
                             <span class="home-filter__label">Sắp xếp theo</span>
-                            <button class="btn">Phổ biến</button>
-                            <button class="btn btn--primary">Mới nhất</button>
-                            <button class="btn">Bán chạy</button>
+                            <button class="home-filter__btn btn">Phổ biến</button>
+                            <button class="home-filter__btn btn btn--primary">Mới nhất</button>
+                            <button class="home-filter__btn btn">Bán chạy</button>
 
                             <div class="select-input">
                                 <span class="select-input__label">Giá</span>
-                                <i class="fa-solid fa-chevron-down"></i>
+                                <i class="select-input__icon fa-solid fa-chevron-down"></i>
+                                <!-- List option -->
+                                <ul class="select-input__list">
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Thấp đến cao</a>
+                                    </li>
+                                    <li class="select-input__item">
+                                        <a href="" class="select-input__link">Giá: Cao đến thấp</a>
+                                    </li>
+                                </ul>
                             </div>
 
                             <div class="home-filter__page">
                                 <div class="home-filter__page-num">
-                                    <span class="home-filter__page-current">1</span>
-                                    /
-                                    14
+                                    <span class="home-filter__page-current">1</span>/14
                                 </div>
                                 <div class="home-filter__page-control">
-                                    <a href="" class="home-filter__page-btn">
-                                        <i class="fa-solid fa-chevron-left"></i>
+                                    <a href="" class="home-filter__page-btn home-filter__page-btn--disable">
+                                        <i class="home-filter__page-icon fa-solid fa-chevron-left"></i>
                                     </a>
                                     <a href="" class="home-filter__page-btn">
-                                        <i class="fa-solid fa-chevron-right"></i>
+                                        <i class="home-filter__page-icon fa-solid fa-chevron-right"></i>
                                     </a>
-                                    
-                                    
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="home-product">
+                            <div class="grid__row">
+                                <div class="grid__column-2-4">
+                                    <div class="home-product-item">
+                                        <div class="home-product-item__img" style="background-image: url(data:image/jpeg;base64,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);"></div>
+                                        <h4 class="home-product-item__name">Chuột chơi game, chuột máy tính có dây LOGITECH G102 RBG Độ Chính Xác Cao 8000DPI</h4>
+                                        <div class="home-product-item__price">
+                                            <span class="home-product-item__price-old">1.200.000đ</span>
+                                            <span class="home-product-item__price-current">900.000đ</span>
+                                        </div>
+                                        <div class="home-product-item__action">
+                                            <span class="home-product-item__like home-product-item__like--liked">
+                                                <i class="home-product-item__like-icon-empty fa-regular fa-heart"></i>
+                                                <i class="home-product-item__like-icon-fill fa-solid fa-heart" style="color: #fb132a;"></i>
+                                            </span>
+                                            <div class="home-product-item__rating">
+                                                <i class="home-product-item__star--gold fa-regular fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-regular fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-regular fa-star"></i>
+                                                <i class="home-product-item__star--gold fa-regular fa-star"></i>
+                                                <i class="fa-regular fa-star"></i>
+                                            </div>
+                                            <span class="home-product-item__sold">88 đã bán</span>
+                                        </div>
+                                        <div class="home-product-item__origin">
+                                            <span class="home-product-item__brand">Logitech</span>
+                                            <span class="home-product-item__origin-name">China</span>
+                                        </div>
+                                        <div class="home-product-item__favorite">
+                                            <i class="fa-solid fa-check"></i>
+                                            <span>Yêu thích</span>
+                                        </div>
+                                        <div class="home-product-item__sale-off">
+                                            <span class="home-product-item__sale-off-percent">10%</span>
+                                            <span class="home-product-item__sale-off-label">GIẢM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>                            
                         </div>
                     </div>
                 </div>
