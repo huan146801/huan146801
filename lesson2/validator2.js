@@ -36,11 +36,15 @@ function Validator(formSelector) {
                     var ruleInfo = rule.split(':');
                     rule = ruleInfo[0]
                 }
-                console.log(rule);
+                // console.log(rule);
+                if(Array.isArray(formRules[input.name])) {
+                    formRules[input.name].push(validatorRules[rule]);
+                }else {
+                    formRules[input.name] = [validatorRules[rule]];
+                }
             }
-            formRules[input.name] = input.getAttribute('rules');
         }
+        console.log(formRules)
     }
 }
 
-// huan146801
