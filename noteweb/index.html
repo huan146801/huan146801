@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghi chú</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ghi chú</h1>
+        <div class="note-form">
+            <input type="text" id="note-title" placeholder="Tiêu đề">
+            <textarea id="note-content" placeholder="Nội dung ghi chú"></textarea>
+            <button id="save-button">Lưu</button>
+        </div>
+        <div class="notes-list">
+            <ul id="notes"></ul>
+        </div>
+        <div class="note-detail" id="note-detail">
+            <h2 id="detail-title"></h2>
+            <p id="detail-content"></p>
+            <button id="delete-button">Xóa</button>
+            <button id="translate-button">Dịch</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
