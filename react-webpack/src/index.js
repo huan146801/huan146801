@@ -6,10 +6,13 @@ function App() {
     return (
         <div>
             <h1>Xin chào anh em F8!</h1>
+            <h2>Ae oi </h2>
         </div>
     )
 }
 
 // Render component App vào #root element
-ReactDOM.render(<App />, document.getElementById('root'))
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />)
+
 
