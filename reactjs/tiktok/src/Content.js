@@ -8,6 +8,7 @@ import { useEffect, useState} from 'react'
 
 //-------------
 //1. Trong ca 3 TH, callback luon duoc goi sau khi component mounted
+//2. Cleanup function luon duoc goi truoc khi component unmounted
 
 const tabs = ['posts','comments','albums']
 
@@ -15,6 +16,7 @@ function Content() {
     const [title, setTitle] = useState('')
     const [posts, setPosts] = useState([])
     const[type, setType] = useState('posts')
+    const [goToTop,  setGoToTop] = useState(false)
     
     console.log(type)
     useEffect(() =>{
@@ -25,6 +27,18 @@ function Content() {
             })
     }, [type])
     
+    useEffect(() => {
+
+        const handleScroll = () => {
+            setGoToTop(window.scrollY>=200)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {  //Clean up func
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <div>
             {tabs.map(tab => (
@@ -49,6 +63,18 @@ function Content() {
                     <li key ={post.id}>{post.title||post.name}</li>
                 ))}
             </ul>
+
+            {goToTop && (
+                <button
+                    style = {{
+                        position: 'fixed',
+                        right: 20,
+                        bottom: 20,
+                    }}
+                >
+                    Go to Top
+                </button>
+            )}
         </div>
     )
 }
