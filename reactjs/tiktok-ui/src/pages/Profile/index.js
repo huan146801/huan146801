@@ -1,5 +1,5 @@
-function Home() {
-    return <h2>Home page</h2>
+function Profile() {
+    return <h2>Profile page</h2>
 }
 
-export default Home;
+export default Profile;
