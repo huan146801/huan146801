@@ -1,15 +1,21 @@
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faDeleteLeft, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
+import { faDeleteLeft, faPenToSquare } from "@fortawesome/free-solid-svg-icons"
 
-function ToDoList() {
-  const [job, setJob] = useState("");
-  const [jobs, setJobs] = useState(() => {
-    const storageJobs = JSON.parse(localStorage.getItem("jobs"));
-    return storageJobs ?? [];
+interface Job {
+  name: string;
+  completed: boolean;
+  createdAt: string;
+}
+
+function App() {
+  const [job, setJob] = useState<string>("");
+  const [jobs, setJobs] = useState<Job[]>(() => {
+    const storageJobs = localStorage.getItem("jobs");
+    return storageJobs ? JSON.parse(storageJobs) : [];
   });
-  const [jobIndex, setJobIndex] = useState(undefined);
-  const [jobName, setJobName] = useState("");
+  const [jobIndex, setJobIndex] = useState<number| undefined>(undefined);
+  const [jobName, setJobName] = useState<string>("");
   //Add job
   //tao 1 input va 1 button de them job
   //dung useState tao 1 mang de luu cac job va render ra giao dien
@@ -22,7 +28,7 @@ function ToDoList() {
       return;
     }
     const createdAt = new Date().toString();
-    setJobs((prev) => {
+    setJobs((prev: Job[]) => {
       const newJob = { name: job, completed: false, createdAt }; // cập nhật newjob dưới dạng obj
       const newJobs = [...prev, newJob];
 
@@ -35,11 +41,11 @@ function ToDoList() {
   };
 
   //Delete job
-  //tao 1 icon de khi click thi se xoa job
+  //tao 1 icon de khi click thi se xoa job 
   // sử dụng splice để xóa job thông qua index
   // lưu lại vào local storage
-  const handleDelete = (index) => {
-    setJobs((prev) => {
+  const handleDelete = (index: number) => {
+    setJobs((prev: Job[]) => {
       const newJobs = [...prev];
       newJobs.splice(index, 1);
       // Save to local storage
@@ -53,7 +59,7 @@ function ToDoList() {
   //tạo 1 icon để khi click sẽ hiện ra prompt để sửa job
   //tạo một biến để lưu giá trị của job mới và lưu lại vào local storage
 
-  const handleEdit = (index) => {
+  const handleEdit = (index: number) => {
     setJobIndex(index);
     setJobName(jobs[index].name)
     // setJobs((prev) => {
@@ -67,18 +73,22 @@ function ToDoList() {
   };
 
   const handleSave = () => {
-    setJobs((prev) => {
+    setJobs((prev: Job[]) => {
+      if(jobIndex !== undefined) {
         const newJobs = [...prev];
         newJobs[jobIndex].name = jobName;
         // Save to local storage
         const jsonJobs = JSON.stringify(newJobs);
         localStorage.setItem("jobs", jsonJobs);
         return newJobs;
+      } else {
+        return prev;
+      }
       });
-    setJobIndex("")
+    setJobIndex(undefined);
   }
 
-  const toggleCompleted = (index) => {
+  const toggleCompleted = (index: number) => {
     setJobs((prev) => {
       const newJobs = [...prev];
       newJobs[index].completed = !newJobs[index].completed; // Toggle trạng thái completed
@@ -145,5 +155,6 @@ function ToDoList() {
     </div>
   );
 }
+  
 
-export default ToDoList;
+export default App
