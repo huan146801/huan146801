@@ -1,0 +1,11 @@
+handleAddJob = (jobTitle) => {
+    // Tạo biến newJob và gán giá trị của nó là 1 object { name: strin, completed: boolean }
+    => Tạo biến là 1 object có name là jobTitle và completd = false
+    //  thêm giá trị job mới vào mảng jobs
+    render lai gia tri cua job vua them ra man hinh
+
+    const newJob = { name: job, completed: false }; // cập nhật newjob dưới dạng obj
+      jobs.push(newJob);
+      setJobs(jobs);
+    
+    person.name

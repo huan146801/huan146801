@@ -1,0 +1,14 @@
+// tao 1 o input khi click vao edit
+// khi click vao thi se an job.name
+// hien o input len va trong o input phai co job.name de edit
+
+// sua duoc ten job
+// hien ra job de sua
+// sua job
+// luu lai 
+
+function Add() {
+    
+}
+
+const add = () => {}
