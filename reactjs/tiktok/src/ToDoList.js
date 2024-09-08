@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDeleteLeft, faPenToSquare } from "@fortawesome/free-solid-svg-icons";
 
@@ -55,7 +55,7 @@ function ToDoList() {
 
   const handleEdit = (index) => {
     setJobIndex(index);
-    setJobName(jobs[index].name)
+    setJobName(jobs[index].name);
     // setJobs((prev) => {
     //   const newJobs = [...prev];
     //   newJobs[index].name = prompt("Edit job", jobs[index].name);
@@ -68,15 +68,15 @@ function ToDoList() {
 
   const handleSave = () => {
     setJobs((prev) => {
-        const newJobs = [...prev];
-        newJobs[jobIndex].name = jobName;
-        // Save to local storage
-        const jsonJobs = JSON.stringify(newJobs);
-        localStorage.setItem("jobs", jsonJobs);
-        return newJobs;
-      });
-    setJobIndex("")
-  }
+      const newJobs = [...prev];
+      newJobs[jobIndex].name = jobName;
+      // Save to local storage
+      const jsonJobs = JSON.stringify(newJobs);
+      localStorage.setItem("jobs", jsonJobs);
+      return newJobs;
+    });
+    setJobIndex("");
+  };
 
   const toggleCompleted = (index) => {
     setJobs((prev) => {
