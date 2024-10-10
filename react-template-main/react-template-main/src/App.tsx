@@ -1,4 +1,4 @@
-import { useState, useRef} from "react";
+import { useState } from "react";
 import JobList from "./components/JobList";
 import NewJob from "./components/NewJob";
 import { Job } from "./types";
