@@ -1,5 +1,3 @@
-
-
 interface NewJobProps {
   job: string;
   setJob: (job: string) => void;

@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPenToSquare, faDeleteLeft } from "@fortawesome/free-solid-svg-icons";
 import { Job, JobProps } from "../types";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 
 interface JobItemProps extends JobProps {
   job: Job;
@@ -20,14 +20,25 @@ const JobItem = ({
   setJobName,
 }: JobItemProps) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const handleEditJob = () => {
-    handleEdit(index);
-    if (inputRef.current === null) {
-      return;
-    } else {
+
+  // const handleEditJob = () => {
+  //   console.log(inputRef.current);
+  //   if (inputRef.current === null) {
+  //     return;
+  //   } else {
+  //     inputRef.current.focus();
+  //   }
+  // };
+  useEffect(() => {
+    if (index === jobIndex && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [index, jobIndex]);
+
+  const handleEditJob = () => {
+    handleEdit(index);
   };
+
   return (
     <li
       className={`flex items-center ${
@@ -36,7 +47,7 @@ const JobItem = ({
           : "bg-white"
       }`}
     >
-      <div className="flex items-center">
+      <div className="flex items-center w-full">
         <input
           type="checkbox"
           checked={job.completed}
@@ -53,12 +64,14 @@ const JobItem = ({
                 handleSave();
               }
             }}
-            className="border p-2 rounded"
+            className="border p-2 rounded w-[200px]"
           />
         ) : (
-          <span className="text-lg mr-2">{job.name}</span>
+          <span className="text-lg mr-2 w-48">{job.name}</span>
         )}
         <span className="mr-2">{new Date(job.createdAt).toLocaleString()}</span>
+      </div>
+      <div className="flex items-center ml-auto">
         <FontAwesomeIcon
           icon={faPenToSquare}
           onClick={handleEditJob}
