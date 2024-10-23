@@ -1,10 +1,15 @@
-interface NewJobProps {
-  job: string;
-  setJob: (job: string) => void;
-  handleSubmit: () => void;
-}
+import { JobContext } from './JobContext';
+import { useContext } from 'react';
 
-const NewJob = ({ job, setJob, handleSubmit }:NewJobProps) => {
+
+const NewJob = () => {
+  const context = useContext(JobContext);
+
+  if (!context) {
+    return null;
+  }
+
+  const { job, setJob, handleSubmit } = context;
   return (
     <div className="flex items-center m-5">
       <input
