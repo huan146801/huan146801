@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./asset/css/base.css" />
+    <link rel="stylesheet" href="./asset/css/main.css" />
+    <link rel="stylesheet" href="../output.css" />
+    <script src="./index.js"></script>
+    <script src="../asset/glide.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../asset/font/fontawesome-free-6.6.0-web/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../asset/glide.core.css" />
+    <link rel="stylesheet" href="../asset/glide.theme.min.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <header
+        class="header fixed top-0 flex items-center justify-between w-full h-[66px] border bg-white"
+      >
+        <div class="flex items-center justify-center ml-7">
+          <img
+            src="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png"
+            alt="F8"
+            class="w-[38px] h-[38px] rounded-md"
+          />
+          <a href="#" class="ml-4 font-bold text-sm">Học Lập Trình Để Đi Làm</a>
+        </div>
+        <div
+          class="flex items-center justify-center w-[420px] h-[40px] border-2 rounded-3xl border-slate-600 pt-0 pr-2 pb-0 pl-4"
+        >
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            placeholder="Tìm kiếm khóa học, bài viết, video, ..."
+            class="pl-2 w-full outline-none py-0 px-1"
+          />
+        </div>
+        <div class="flex items-center justify-between mr-7">
+          <button class="pr-7 font-semibold text-sm" onclick="showModal2()">
+            Đăng ký
+          </button>
+          <button
+            class="font-semibold text-sm py-2 px-5 rounded-3xl bg-orange-500 text-white"
+            onclick="showModal()"
+          >
+            Đăng nhập
+          </button>
+        </div>
+
+        <div
+          id="modal"
+          class="items-center justify-center fixed top-0 right-0 bottom-0 left-0 hidden bg-slate-200 bg-opacity-50"
+        >
+          <div class="relative w-96 min-h-48 bg-gray-500">
+            <div class="absolute top-0 right-0 pr-2">
+              <i class="fa-solid fa-xmark" onclick="closeModal()"></i>
+            </div>
+            <div class="ml-4 mt-8">
+              <h1 class="text-xl text-slate-50 font-bold">Text in a modal</h1>
+              <h2 class="text-slate-50 mt-4">
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div
+          id="modal2"
+          class="items-center justify-center fixed top-0 right-0 bottom-0 left-0 hidden bg-slate-200 bg-opacity-50"
+        >
+          <div class="relative w-96 min-h-48 bg-gray-500">
+            <div class="absolute top-0 right-0 pr-2">
+              <i class="fa-solid fa-xmark" onclick="closeModal2()"></i>
+            </div>
+            <div class="ml-4 mt-8">
+              <h1 class="text-xl text-slate-50 font-bold">Text in a modal 2</h1>
+              <h2 class="text-slate-50 mt-4">
+                Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+              </h2>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="container flex w-full mt-20">
+        <!-- Menu -->
+        <div class="fixed left-0 flex flex-start py-0 px-4 mt-5 w-2/12">
+          <ul class="flex flex-start flex-col">
+            <li
+              class="flex items-center flex-col hover:rounded hover:bg-slate-300 p-3"
+            >
+              <i class="fa-solid fa-house"></i>
+              <a href="#" class="text-sm mt-1">Trang chủ</a>
+            </li>
+            <li
+              class="flex flex-col items-center justify-center hover:rounded hover:bg-slate-300 p-3 mt-4"
+            >
+              <i class="fa-solid fa-walkie-talkie"></i>
+              <a href="#" class="text-sm mt-1">Lộ trình</a>
+            </li>
+            <li
+              class="flex flex-col items-center justify-center hover:rounded hover:bg-slate-300 p-3 mt-4"
+            >
+              <i class="fa-solid fa-newspaper"></i>
+              <a href="" class="text-sm mt-1">Bài viết</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <!-- Slider -->
+          <!-- <div class="glide ml-40 w-full">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides">
+                <li class="glide__slide">
+                  <img
+                    src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_web_ReactJS.png"
+                    alt=""
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="https://files.fullstack.edu.vn/f8-prod/banners/Banner_01_2.png"
+                    alt=""
+                  />
+                </li>
+                <li class="glide__slide">
+                  <img
+                    src="https://files.fullstack.edu.vn/f8-prod/banners/1/657686da32787.png"
+                    alt=""
+                  />
+                </li>
+              </ul>
+            </div>
+
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--lef" data-glide-dir="<">
+                <i class="fa-solid fa-arrow-left text-black"></i>
+              </button>
+              <button
+                class="glide__arrow glide__arrow--right"
+                data-glide-dir=">"
+              >
+                <i class="fa-solid fa-arrow-right text-black"></i>
+              </button>
+            </div>
+          </div>
+          <script>
+            new Glide(".glide").mount();
+          </script> -->
+
+          <!-- Content -->
+          <div class="w-5/6 ml-40">
+            <div class="flex flex-col">
+              <div class="flex items-center justify-between mt-5">
+                <h1 class="font-bold text-2xl">Khóa học miễn phí</h1>
+                <a href="#" class="text-orange-500 font-semibold text-sm"
+                  >Xem lộ trình ></a
+                >
+              </div>
+              <div class="grid grid-cols-4 gap-4 mt-4">
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/7.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Kiến thức nhập môn IT
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">131.390</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">9</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">3h12p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/21/63e1bcbaed1dd.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Lập trình C++ cơ bản, nâng cao
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">31.033</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">55</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">10h18p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/2.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        HTML, CSS từ Zero đến Hero
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">203.018</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">117</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">29h5p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/3.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Responsive Với Grid System
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">45.621</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">34</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">6h31p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/1.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Lập trình Javascipt cơ bản
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">141.413</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">112</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">24h15p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/12.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Lập trình Javascipt nâng cao
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">38.872</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">19</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">8h41p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/14/624faac11d109.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Làm việc với Terminal & Ubuntu
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">19.309</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">28</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">4h59p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/13/13.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Xây dựng Website với ReactJS
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">70.486</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">112</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">27h32p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/6.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">Node & ExpressJS</h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">44.956</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">36</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">12h8p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/courses/4/61a9e9e701506.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        App "Đừng Chạm Tay Lên Mặt"
+                      </h3>
+                      <span class="pt-2 pl-4 font-semibold text-orange-600"
+                        >Miễn phí</span
+                      >
+                      <div
+                        class="flex justify-between items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-user pr-1 text-sm"></i>
+                          <span class="text-sm">10.303</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-play pr-1 text-sm"></i>
+                          <span class="text-sm">13</span>
+                        </div>
+                        <div class="flex items-center">
+                          <i class="fa-solid fa-clock pr-1 text-sm"></i>
+                          <span class="text-sm">1h34p</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col mt-8">
+              <div class="flex items-center justify-between mt-5">
+                <h1 class="font-bold text-2xl">Bài viết nổi bật</h1>
+                <a href="#" class="text-orange-500 font-semibold text-sm"
+                  >Xem tất cả ></a
+                >
+              </div>
+              <div class="grid grid-cols-4 gap-4 mt-4">
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/279/6153f692d366e.jpg"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        [Phần 1] Tạo dự án ReactJS với Webpack và Babel
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">12 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Cách đưa code lên Github và tạo Github Pages
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Vo Minh Kha</span>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">4 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/51/6139c6453456e.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Ký sự ngày thứ 25 học ở F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="column">
+                  <div
+                    class="flex flex-col rounded-xl bg-slate-200 cursor-pointer transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-100 hover:shadow-lg duration-300"
+                  >
+                    <img
+                      src="https://files.fullstack.edu.vn/f8-prod/blog_posts/65/6139fe28a9844.png"
+                      alt="Kiến thức nhập môn IT"
+                      class="w-full h-full rounded-t-xl"
+                    />
+                    <div class="flex flex-col">
+                      <h3 class="pt-2 pl-4 font-semibold">
+                        Tổng hợp các sản phẩm của học viên tại F8
+                      </h3>
+                      <div
+                        class="flex justify-start items-center pt-5 pb-2 px-4"
+                      >
+                        <div class="flex items-center mr-2">
+                          <i class="fa-regular fa-circle-user pr-1 text-sm"></i>
+                          <span class="text-sm pr-1">Sơn Đặng</span>
+                          <i
+                            class="fa-regular fa-circle-check text-sm text-blue-500"
+                          ></i>
+                        </div>
+                        <div class="flex items-center mr-2">
+                          <span class="text-sm">•</span>
+                        </div>
+                        <div class="flex items-center">
+                          <span class="text-sm">6 phút đọc</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer class="pt-[68px] px-[180px] pb-[40px] bg-slate-800 mt-14">
+        <div>
+          <div class="grid grid-cols-7 gap-4">
+            <div class="col-span-2">
+              <div class="flex flex-col">
+                <div class="flex items-center">
+                  <img
+                    src="https://fullstack.edu.vn/assets/f8-icon-lV2rGpF0.png"
+                    alt="F8"
+                    class="w-[38px] h-[38px] rounded-md"
+                  />
+                  <h2 class="ml-4 font-bold text-base text-white">
+                    Học Lập Trình Để Đi Làm
+                  </h2>
+                </div>
+                <p class="text-slate-200 text-sm mt-5 gap-1">
+                  <b>Điện thoại:</b>
+                  <a
+                    href="tel:08 1919 8989"
+                    class="hover:underline hover:decoration-solid"
+                    >08 1919 8989</a
+                  >
+                  <br />
+                  <b>Email:</b>
+                  <a
+                    href="contact@fullstack.edu.vn"
+                    class="hover:underline hover:decoration-solid"
+                    >contact@fullstack.edu.vn</a
+                  >
+                  <br />
+                  <b>Địa chỉ:</b>
+                  " Số 1, ngõ 41, Trần Duy Hưng, Cầu Giấy, Hà Nội"
+                </p>
+                <div class="mt-5">
+                  <img
+                    src="data:image/png;base64,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"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-1">
+              <div class="">
+                <div class="flex items-center">
+                  <h2 class="font-bold text-base text-white">VỀ F8</h2>
+                </div>
+                <div class="flex flex-col text-slate-200 text-sm mt-5 gap-2">
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Giới thiệu</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Liên hệ</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Bảo mật</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-1">
+              <div class="">
+                <div class="flex items-center">
+                  <h2 class="font-bold text-base text-white">SẢN PHẨM</h2>
+                </div>
+                <div class="flex flex-col text-slate-200 text-sm mt-5 gap-2">
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Game Nester</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Game CSS Diner</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Game CSS Selectors</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Game Froggy</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Game Froggy Pro</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Game Scoops</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-span-1">
+              <div class="">
+                <div class="flex items-center">
+                  <h2 class="font-bold text-base text-white">CÔNG CỤ</h2>
+                </div>
+                <div class="flex flex-col text-slate-200 text-sm mt-5 gap-2">
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Tạo CV xin việc</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Rút gọn liên kết</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Clip-path maker</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Snippet generator</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >CSS Grid generator</a
+                  >
+                  <a href="#" class="hover:underline hover:decoration-solid"
+                    >Cảnh báo sờ tay lên mặt</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-span-2">
+              <div class="">
+                <div class="flex flex-start">
+                  <h2 class="font-bold text-base text-white">
+                    CÔNG TY CỔ PHẦN CÔNG NGHỆ GIÁO DỤC F8
+                  </h2>
+                </div>
+                <ul class="flex flex-col text-slate-200 text-sm mt-5 gap-2">
+                  <li><b> Mã số thuế: </b> 0109922901</li>
+                  <li><b> Ngày thành lập: </b> 04/03/2022</li>
+
+                  <li></li>
+                  <b>Lĩnh vực hoạt động:</b>
+                  Giáo dục, công nghệ - lập trình. Chúng tôi tập trung xây dựng
+                  và phát triển các sản phẩm mang lại giá trị cho cộng đồng lập
+                  trình viên Việt Nam.
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center mt-8">
+            <div>
+              <p class="text-slate-200 text-sm mt-5 gap-2">
+                © 2018 - 2024 F8. Nền tảng học lập trình hàng đầu Việt Nam
+              </p>
+            </div>
+            <div>
+              <a href="https://www.youtube.com/@F8VNOfficial"
+                ><i class="fa-brands fa-youtube bg-red-500 text-3xl"></i
+              ></a>
+              <a href="#" class="ml-2"></a
+              ><i class="fa-brands fa-facebook bg-blue-500 text-3xl"></i>
+              <a href="#" class="ml-2"
+                ><i class="fa-brands fa-tiktok text-white text-3xl"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

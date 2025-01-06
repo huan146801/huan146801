@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="./asset/font/fontawesome-free-6.6.0-web/css/all.min.css"
+    />
+    <title>Tailwind css</title>
+  </head>
+  <body>
+    <h1 class="text-3xl font-bold underline text-red-500 font-mono text-center">
+      Modal
+    </h1>
+
+    <div class="flex items-center justify-center">
+      <button
+        class="border-2 border-solid border-black rounded-lg font-mono text-sky-300"
+        onclick="showModal()"
+      >
+        Open Modal
+      </button>
+    </div>
+    <div
+      id="modal"
+      class="items-center justify-center fixed top-0 right-0 bottom-0 left-0 hidden bg-slate-200 bg-opacity-50"
+    >
+      <div class="relative w-96 min-h-48 bg-gray-500">
+        <div class="absolute top-0 right-0 pr-2">
+          <i class="fa-solid fa-xmark" onclick="closeModal()"></i>
+        </div>
+        <div class="ml-4 mt-8">
+          <h1 class="text-xl text-slate-50 font-bold">Text in a modal</h1>
+          <h2 class="text-slate-50 mt-4">
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showModal() {
+        document.getElementById("modal").classList.remove("hidden");
+        document.getElementById("modal").classList.add("flex");
+      }
+
+      function closeModal() {
+        document.getElementById("modal").classList.remove("flex");
+        document.getElementById("modal").classList.add("hidden");
+      }
+    </script>
+  </body>
+</html>

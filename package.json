@@ -1,6 +1,11 @@
 {
   "dependencies": {
+    "@glidejs/glide": "^3.6.2",
     "classnames": "^2.5.1",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "tailwindcss-animated": "^1.1.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
   }
 }

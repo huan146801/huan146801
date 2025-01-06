@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./output.css" />
+    <link
+      rel="stylesheet"
+      href="./asset/font/fontawesome-free-6.6.0-web/css/all.min.css"
+    />
+    <style>
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 14px;
+        color: white;
+        display: flex;
+        align-items: center;
+        transition: 0.3s;
+      }
+
+      .sidenav a i {
+        margin-right: 14px;
+      }
+
+      .sidenav a:hover {
+        color: burlywood;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center min-h-screen">
+    <button
+      class="bg-slate-950 text-blue-500 p-2 font-mono rounded-sm"
+      onclick="openNav()"
+    >
+      Open Drawer
+    </button>
+    <div
+      id="mySidenav"
+      class="h-full w-0 fixed z-[1] top-0 left-0 bg-black overflow-x-hidden pt-[60px] transition duration-75 sidenav"
+    >
+      <a
+        href="javascript:void(0)"
+        class="absolute top-0 right-6 text-4xl ml-12 font-bold"
+        onclick="closeNav()"
+        >&times;
+      </a>
+
+      <a href="#"><i class="fa-solid fa-inbox"></i>Inbox </a>
+
+      <a href="#"><i class="fa-solid fa-envelope"></i>Starred</a>
+
+      <a href="#"><i class="fa-solid fa-inbox"></i>Send email</a>
+
+      <a href="#"><i class="fa-solid fa-envelope"></i>Drafts</a>
+    </div>
+
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
+</html>
